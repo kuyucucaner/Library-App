@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>JavaScript Project</title>
+</head>
+<body>
+    <div class="container">
+    <h1>BOOK LIBRARY!</h1>
+    <h3>THIS IS MY FIRST JAVASCRIPT PROJECT!</h3>
+    </div>
+    <div class="add">
+      <button class="add-button">Add Book</button>
+
+     </div>   
+    <div>
+    <main>
+        <table id="book-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody id="book-list">
+              <td>TitleData</td>
+              <td>AuthorData</td>
+              <td>PagesData</td>
+              <td>ReadData</td>
+              <td><button class = "table-button-status">Change Status</button></td>
+              <td><button class = "table-button-edit">Edit</button></td>
+              <td><button class = "table-button-delete">Delete</button></td>
+            </tbody>
+          </table>
+    </main>
+</div>
+<div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <h2 id="title">Edit Book</h2>
+      <input id="edit-title" type="text" placeholder="Title">
+      <input id="edit-author" type="text" placeholder="Author">
+      <input id="edit-pages" type="number" placeholder="Pages">
+      <label for="edit-has-read">Has Read</label>
+      <input id="edit-has-read" type="checkbox">
+      <button id="save-edit">Save</button>
+      <button id="close-edit">Close</button>
+    </div>
+  </div>  
+  <div id="add-modal" class="modal">
+    <div class="modal-content">
+      <h2 id="title">Add Book</h2>
+      <input id="add-title" type="text" placeholder="Title">
+      <input id="add-author" type="text" placeholder="Author">
+      <input id="add-pages" type="number" placeholder="Pages">
+      <label for="add-has-read">Has Read</label>
+      <input id="add-has-read" type="checkbox">
+      <button id="save-add">Save</button>
+      <button id="close-add">Close</button>
+    </div>
+  </div>  
+    <script src="main.js"></script>
+</body>
+</html>

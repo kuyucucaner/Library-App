@@ -1,0 +1,336 @@
+body {
+  background: linear-gradient(135deg,#610C9F, #E95793); /* Arka plan rengi için gradient kullanımı */
+  font-family: Arial, sans-serif; /* Yazı tipi seçimi */
+  color: #333; /* Metin rengi */
+
+  /* Metin boyutu ve kenar boşlukları */
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+
+  /* Metin gölgeleme */
+
+}
+
+h1 ,h3 {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+ .container{
+    text-align: center;
+ }
+ #edit-modal {
+    display: none;
+  }
+  
+ main {
+    overflow-x: auto;
+    padding-top: 4%;
+    margin-left: 4%;
+    margin-right: 4%; /* Tablo sığmazsa yatay kaydırma ekler */
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  
+  table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  table th {
+    background-color: #f0f0f0;
+  }
+  
+  table tbody tr:nth-child(2n) {
+    background-color: #f7f7f7;
+  }
+  
+  table tbody td:last-child {
+    text-align: center;
+  }
+  #book-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #book-table th,
+  #book-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  #book-table th {
+    background-color: #ff006a;
+    color: #fff;
+  }
+  /*button*/
+  .table-button-edit {
+    padding: 10px 20px;
+    background-color: #FFB600;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.table-button-delete {
+  padding: 10px 20px;
+  background-color: #FF0000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.table-button-status {
+  padding: 10px 20px;
+  background-color: #3ad602;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+
+.table-button-status:hover {
+  background-color: #217a00;
+}
+.table-button-delete:hover {
+  background-color: #AC0000;
+}
+.table-button-edit:hover {
+    background-color: #FF8300;
+}
+
+  .add-button {
+    background: linear-gradient(45deg, #da2a0b, #db3535);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .add-button:hover {
+    background: linear-gradient(45deg, #db3535, #da2a0b); /* Hover efekti ile renk değişimi */
+    transform: scale(1.05); /* Fare üzerine gelindiğinde renk değişikliği efekti ekledik */
+  }
+  .add {
+    text-align: center;
+  }
+  /*MODAL*/
+  /* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Modal İçerik */
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Başlık */
+  .modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Girişler */
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Checkbox Etiketi */
+  .modal-content label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  /* Düğmeler */
+  .modal-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Kapat Düğmesi */
+  #close-edit {
+    background-color: #ccc;
+    margin-left: 10px;
+  }
+  
+  /* Düğme Üzerine Gelindiğinde */
+  .modal-content button:hover {
+    background-color: #0056b3;
+  }
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Modal İçerik */
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Başlık */
+  .modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Girişler */
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Checkbox Etiketi */
+  .modal-content label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  /* Düğmeler */
+  .modal-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #title {
+    font-size: 24px;
+    color: #333; /* Metin rengi */
+    font-family: Arial, sans-serif; /* Yazı tipi */
+    text-align: center; /* Metin hizalama */
+  }
+  #title {
+    background-color: #f0f0f0; /* Arka plan rengi */
+    border: 2px solid #999; /* Kenarlık */
+    padding: 10px; /* İçerik ile kenarlık arası boşluk */
+  }
+  #title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Metin gölgelendirme */
+  }
+      #add-title,
+#add-author,
+#add-pages ,
+#edit-title,
+#edit-author,
+#edit-pages{
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#add-has-read {
+  margin: 10px 0;
+}
+
+/* Girdilere odaklandığınızda renk değiştirme örneği */
+#add-title:focus,
+#add-author:focus,
+#add-pages:focus {
+  border: 1px solid #007BFF; /* Özelleştirebilirsiniz */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Özelleştirebilirsiniz */
+}
+#close-add {
+  background-color: rgb(167, 2, 2);
+}
+  /* Kapat Düğmesi */
+  #close-edit {
+    background-color: #a70606;
+    margin-left: 10px;
+  }
+  
+  /* Düğme Üzerine Gelindiğinde */
+  .modal-content button:hover {
+    background-color: #0056b3;
+  }
+    
+  /* Responsive stil ayarları */
+  @media (max-width: 768px) {
+    table {
+      font-size: 14px; 
+    }
+  
+    table th, table td {
+      padding: 8px;
+    }
+  
+    button {
+      padding: 3px 6px;
+    }
+  }
